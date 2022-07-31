@@ -16,7 +16,7 @@ public class GetterProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         StringBuilder builder = new StringBuilder()
-                .append("package com.imlayo.java.demo.lombok;\n\n")
+                .append("package com.imlayo.java.demo.lombok2;\n\n")
                 .append("public class Test2 {\n\n") // open class
                 .append("\tpublic String getMessage() {\n") // open method
                 .append("\t\treturn \"");
@@ -30,7 +30,7 @@ public class GetterProcessor extends AbstractProcessor {
                 .append("\t}\n") // close method
                 .append("}\n"); // close class
         try { // write the file
-            JavaFileObject source = processingEnv.getFiler().createSourceFile("com.imlayo.java.demo.lombok.Test2");
+            JavaFileObject source = processingEnv.getFiler().createSourceFile("com.imlayo.java.demo.lombok2.Test2");
             Writer writer = source.openWriter();
             writer.write(builder.toString());
             writer.flush();
